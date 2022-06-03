@@ -1,0 +1,85 @@
+import React,{useState} from 'react';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+export default function SpaceshipPurchase(){
+	const bestPrice = 1000;
+	const [color , setColor] = useState(0)
+	const [power, setPower] =useState(0);
+	const [warpDrive , setWarpDrive] =useState(0);
+	const [packages , setPackages]=useState(0);
+
+
+
+	return(
+
+		<div class="container">
+  			<div class="row">
+  		
+  			<h4 className="mainHeading">Spaceship Configurator</h4>
+   			 	<div class="col">   			 	
+					<h5>Select Color:</h5>
+					<button onClick={() =>setColor(0)} className="btn btn-secondary" >+0 &euro; <br/>Snow</button>{" "}
+					<button onClick={ () =>setColor(100)} className="btn btn-secondary">+100 &euro; 
+					<br/>Valcono</button>{" "}
+					<button onClick={() =>setColor(200)} className="btn btn-info">+200 &euro; <br/> Sky</button><br/><br/>
+
+					<h5>Select Power:</h5>
+					<button onClick={() =>setPower(0)}  className="btn btn-danger">100 MW <br/>+0 &euro; </button>{" "}
+					<button onClick={() =>setPower(200)} className="btn btn-danger">150 MW <br/> +200 &euro;</button>{" "}
+					<button onClick={() =>setPower(500)} className="btn btn-danger">200 MW <br/>+500 &euro; </button><br/><br/>
+
+					<h5>Warp Drive</h5>
+					<Button onClick={() =>setWarpDrive(0)} > NO <br/>+0E</Button>{" "}
+					<Button variant="success" onClick={() =>setWarpDrive(1000)} >YES <br/>+1000 &euro;</Button><br/><br/>
+
+					<h5>Select Option Package:</h5>
+					<button onClick={() =>setPackages(0)} className="btn btn-dark">Basic <br/>+0 &euro;</button>{" "}
+					<button onClick={() =>setPackages(100)} className="btn btn-dark">Sport<br/> +100 &euro;</button>{" "}
+					<button onClick={() =>setPackages(500)} className="btn btn-dark">Lux <br/> +500 &euro;</button><br/><br/>
+      			
+       			 </div>
+       		
+   			
+   				<div class="col" id="righttotal">
+   				<div style={{border:"1px solide black"}}>
+		    		<h5>Best Price:{bestPrice}&euro;</h5>
+					<h5>Color:<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</span>{color}&euro;</h5>
+					<h5>Power:
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</span>
+					{power}&euro;</h5>
+					<h5>Warp Driver:<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</span>{warpDrive}&euro;</h5>
+					<h5>Option package:<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{packages}&euro;</h5>
+					<hr style={{width:"537px"}}/>
+					<h5>Total:
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</span>
+					{bestPrice+color+power+warpDrive+packages}&euro;</h5> 
+					</div>   	
+
+ 				</div>
+ 				
+ 				
+  		</div>
+
+  		<hr/>
+  		<div>
+  		<h3>First</h3>
+  		<button className={isActive ? 'bg-salmon' : ''}  onClick={handleClick}>One</button>{" "}
+  		<button className={isActive1 ? 'bg-salmon' : ''}  onClick={handleClick1}>Two</button>
+  		</div>
+  		<h3>Second</h3>
+  		<button className={isActive2 ? 'bg-salmon' : ''} onClick={handleClick2}>Second One</button>
+  		<button className={isActive3 ? 'bg-salmon' : ''} onClick={handleClick3} >Second Two</button>
+  		</div>
+
+	
+
+
+		)
+}
+
